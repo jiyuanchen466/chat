@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极客聊天室</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- 顶部移动端导航（只在手机上显示） -->
+        <div class="mobile-topbar">
+            <button id="toggle-sidebar">☰</button>
+            <span id="mobile-title">聊天室</span>
+        </div>
+
+        <!-- 遮罩层（手机上打开侧边栏时显示） -->
+        <div class="sidebar-mask" id="sidebar-mask"></div>
+
+        <!-- 侧边栏 -->
+        <div class="sidebar" id="sidebar">
+            <div class="my-profile">
+                <img id="my-avatar" src="" alt="头像">
+                <div class="my-info">
+                    <h3 id="my-nickname">加载中...</h3>
+                    <p>在线</p>
+                </div>
+                <a href="profile.html" class="link-btn">个人主页</a>
+            </div>
+
+            <div class="sidebar-actions">
+                <button id="add-friend-btn" class="sidebar-btn">➕ 加好友</button>
+                <button id="friend-request-btn" class="sidebar-btn">
+                    📨 新的朋友
+                    <span id="request-badge" class="badge" style="display:none;">0</span>
+                </button>
+            </div>
+
+            <div class="user-list" id="user-list"></div>
+        </div>
+
+        <!-- 聊天主区 -->
+        <div class="chat-main">
+            <div class="chat-header" id="chat-header">
+                <h2>请选择一个好友开始聊天</h2>
+            </div>
+            <div class="message-area" id="message-area"></div>
+            <div class="input-area">
+                <button class="emoji-btn" id="emoji-btn">😊</button>
+                <input type="text" id="message-input" placeholder="输入消息..." disabled>
+                <button id="send-btn" disabled>发送</button>
+                <div class="emoji-panel" id="emoji-panel">
+                    <span>😀</span><span>😂</span><span>😍</span><span>😎</span><span>🤔</span>
+                    <span>😭</span><span>😡</span><span>👍</span><span>👎</span><span>🙏</span>
+                    <span>🎉</span><span>❤️</span><span>🔥</span><span>⭐</span><span>🚀</span>
+                    <span>🍺</span><span>🍕</span><span>🐶</span><span>🐱</span><span>🌈</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 弹窗部分保持不变（加好友、新的朋友） -->
+    <!-- 加好友弹窗 -->
+    <div class="modal" id="add-friend-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>加好友</h2>
+                <span class="close-btn" data-modal="add-friend-modal">×</span>
+            </div>
+            <div class="modal-body">
+                <div class="search-input-group">
+                    <input type="text" id="search-input" placeholder="输入用户名或昵称搜索">
+                    <button id="search-btn">搜索</button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 好友申请弹窗 -->
+    <div class="modal" id="friend-request-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>新的朋友</h2>
+                <span class="close-btn" data-modal="friend-request-modal">×</span>
+            </div>
+            <div class="modal-body">
+                <div id="request-list" class="request-list"></div>
+            </div>
+        </div>
+    </div>
+    <script src="chat.js"></script>
+</body>
+</html>

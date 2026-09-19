@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #0f172a;
+    background-image: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.15), transparent 40%), radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.15), transparent 40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.profile-container {
+    width: 800px;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-header h1 {
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.back-btn {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    color: #38bdf8;
+    border-color: #38bdf8;
+}
+
+.profile-body {
+    display: flex;
+    gap: 40px;
+}
+
+
+/* 头像区 */
+
+.avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-section img {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    background: #334155;
+    border: 3px solid rgba(56, 189, 248, 0.3);
+}
+
+.upload-btn {
+    padding: 8px 20px;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    font-size: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.upload-btn:hover {
+    background: rgba(56, 189, 248, 0.25);
+}
+
+
+/* 表单区 */
+
+.form-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-item label {
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+.form-item input[type="text"],
+.form-item input[type="email"],
+.form-item textarea {
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+    resize: none;
+}
+
+.form-item input:focus,
+.form-item textarea:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.form-item input:disabled {
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+.form-item textarea {
+    height: 80px;
+    font-family: inherit;
+}
+
+.gender-group {
+    display: flex;
+    gap: 20px;
+}
+
+.gender-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #e2e8f0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.gender-group input[type="radio"] {
+    accent-color: #38bdf8;
+}
+
+.save-btn {
+    margin-top: 10px;
+    padding: 14px;
+    background: linear-gradient(135deg, #38bdf8, #a855f7);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+
+.save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(56, 189, 248, 0.4);
+}
+
+.save-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 768px) {
+    .profile-body {
+        flex-direction: column;
+    }
+    .profile-container {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px;
+        align-items: flex-start;
+        padding-top: 30px;
+    }
+    .profile-container {
+        width: 100%;
+        padding: 25px 20px;
+        border-radius: 16px;
+    }
+    .profile-header h1 {
+        font-size: 20px;
+    }
+    .back-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .profile-body {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .avatar-section img {
+        width: 100px;
+        height: 100px;
+    }
+    .form-item input[type="text"],
+    .form-item input[type="email"],
+    .form-item textarea {
+        font-size: 16px;
+        /* 防止 iOS 自动放大 */
+        padding: 12px 14px;
+    }
+    .gender-group {
+        gap: 16px;
+    }
+    .save-btn {
+        padding: 13px;
+        font-size: 15px;
+    }
+}

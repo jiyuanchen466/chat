@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0f172a;
+    background-image: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.2), transparent 40%), radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.2), transparent 40%);
+    overflow: hidden;
+}
+
+.auth-wrapper {
+    display: flex;
+    width: 900px;
+    height: 600px;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+}
+
+
+/* 左侧品牌区 */
+
+.auth-brand {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(168, 85, 247, 0.1));
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo-circle {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #38bdf8, #a855f7);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+.auth-brand h1 {
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.auth-brand p {
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+
+/* 聊天气泡装饰 */
+
+.chat-bubbles {
+    margin-top: 50px;
+    position: relative;
+    height: 200px;
+}
+
+.bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    padding: 12px 18px;
+    border-radius: 16px;
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    animation: float 6s infinite ease-in-out;
+}
+
+.bubble-1 {
+    top: 0;
+    left: 0;
+    animation-delay: 0s;
+}
+
+.bubble-2 {
+    top: 60px;
+    right: 20px;
+    animation-delay: 1s;
+}
+
+.bubble-3 {
+    top: 130px;
+    left: 30px;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* 右侧表单区 */
+
+.auth-form-panel {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 40px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 6px;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #94a3b8;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form.active {
+    display: flex;
+    animation: slideUp 0.4s ease;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    color: #cbd5e1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0 16px;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper:focus-within {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.input-wrapper .icon {
+    font-size: 16px;
+    margin-right: 12px;
+    color: #94a3b8;
+}
+
+.input-wrapper input {
+    flex: 1;
+    padding: 14px 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+}
+
+.input-wrapper input::placeholder {
+    color: #64748b;
+}
+
+.btn-primary {
+    margin-top: 10px;
+    padding: 16px;
+    background: linear-gradient(135deg, #38bdf8, #a855f7);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(56, 189, 248, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 响应式（手机端隐藏左侧品牌区） */
+
+@media (max-width: 768px) {
+    .auth-wrapper {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+    }
+    .auth-brand {
+        display: none;
+    }
+    .auth-form-panel {
+        padding: 30px 20px;
+    }
+}
+
+
+/* ========== 手机适配 ========== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px;
+        align-items: flex-start;
+        padding-top: 60px;
+    }
+    .auth-wrapper {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        border-radius: 18px;
+    }
+    .auth-brand {
+        display: none;
+    }
+    .auth-form-panel {
+        padding: 30px 22px;
+    }
+    .tabs {
+        margin-bottom: 25px;
+    }
+    .tab {
+        font-size: 15px;
+        padding: 10px 0;
+    }
+    .input-wrapper input {
+        font-size: 16px;
+        padding: 12px 0;
+    }
+    /* 16px 防止 iOS 自动放大 */
+    .btn-primary {
+        padding: 14px;
+        font-size: 15px;
+    }
+}
