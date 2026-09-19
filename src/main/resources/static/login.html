@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎来到聊天室</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <!-- 左侧品牌展示区 -->
+        <div class="auth-brand">
+            <div class="brand-content">
+                <div class="logo-circle">聊</div>
+                <h1>极客聊天室</h1>
+                <p>随时随地，与朋友保持连接</p>
+                <div class="chat-bubbles">
+                    <div class="bubble bubble-1">在吗？开黑吗？</div>
+                    <div class="bubble bubble-2">今晚八点，老地方见！</div>
+                    <div class="bubble bubble-3">收到！🚀</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧表单操作区 -->
+        <div class="auth-form-panel">
+            <div class="form-container">
+                <div class="tabs">
+                    <div class="tab active" data-target="login-form">账号登录</div>
+                    <div class="tab" data-target="register-form">注册新账号</div>
+                </div>
+
+                <!-- 登录表单 -->
+                <form id="login-form" class="form active">
+                    <div class="input-group">
+                        <label>用户名</label>
+                        <div class="input-wrapper">
+                            <span class="icon">👤</span>
+                            <input type="text" id="login-username" placeholder="请输入您的用户名" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>密码</label>
+                        <div class="input-wrapper">
+                            <span class="icon">🔒</span>
+                            <input type="password" id="login-password" placeholder="请输入您的密码" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">立即登录</button>
+                </form>
+
+                <!-- 注册表单 -->
+                <form id="register-form" class="form">
+                    <div class="input-group">
+                        <label>用户名</label>
+                        <div class="input-wrapper">
+                            <span class="icon">👤</span>
+                            <input type="text" id="reg-username" placeholder="仅限英文、数字、下划线（4-20位）" pattern="^[a-zA-Z0-9_]{4,20}$" title="只能输入英文、数字、下划线，长度为4-20位" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>昵称</label>
+                        <div class="input-wrapper">
+                            <span class="icon">🏷️</span>
+                            <input type="text" id="reg-nickname" placeholder="别人看到的名字（昵称）" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>密码</label>
+                        <div class="input-wrapper">
+                            <span class="icon">🔒</span>
+                            <input type="password" id="reg-password" placeholder="设置您的密码" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">创建账号</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
